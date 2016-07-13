@@ -12,4 +12,12 @@ public class Bytes{
         }
         return new String(caracteresHex);
     }
+
+    public static String hexStringToByte(String hex){
+        try{
+            return Hex.decodeHex(hex.toCharArray());
+        }catch(DecoderException ex){
+            throw new UnexpectedException(ex);
+        }
+    }
 }
